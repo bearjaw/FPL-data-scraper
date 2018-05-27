@@ -5,9 +5,9 @@
 # and exports it to an Excel Workbook
 # https://github.com/fez09/FPL-data-scraper
 
-from Tkinter import *
-from Tkinter import Message
-import ttk
+from tkinter import *
+from tkinter import messagebox
+from tkinter import ttk
 import requests
 import openpyxl
 from openpyxl.worksheet.table import Table, TableStyleInfo
@@ -15,9 +15,7 @@ from openpyxl.chart import LineChart, Reference
 from openpyxl.styles import PatternFill, Alignment, Font
 from openpyxl.formatting.rule import IconSet, Rule, FormatObject
 import base64
-import urllib
-from urllib import urlretrieve
-from urllib import urlopen
+from urllib.request import urlopen
 from os import path
 
 
@@ -35,7 +33,7 @@ class fantasypl():
 
         image_url = "http://i.imgur.com/QoNiPLP.gif"
         image_byt = urlopen(image_url).read()
-        image_b64 = base64.encodestring(image_byt)
+        image_b64 = base64.encodebytes(image_byt)
 
         ## Creating and placing widgets
         self.logo = PhotoImage(data=image_b64)
